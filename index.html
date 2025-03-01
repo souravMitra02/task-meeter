@@ -12,7 +12,7 @@
 
 <body class="bg-[#F4F7FF] p-6">
     <header>
-        <div class="navbar bg-base-100 shadow-sm rounded-md">
+        <div class="navbar bg-white shadow-sm rounded-md">
             <div class="navbar-start space-x-2">
                 <img class="w-10" src="assets/logo.png" alt="">
                 <h1 class=" text-3xl">Dev<span class="font-bold">Board</span></h1>
@@ -22,7 +22,7 @@
                     <img src="assets/checkbox.png" alt="">
                     <h1 class="font-bold text-2xl">23</h1>
                 </div>
-                <button class="btn bg-[#F4F7FF] p-2 rounded-full text flex justify-center cursor-pointer"><img
+                <button id="btn-random-color"  class="btn bg-[#F4F7FF] p-2 rounded-full text flex justify-center cursor-pointer"><img
                         class="w-9/12" src="assets/theme-btn.png" alt=""></button>
             </div>
         </div>
@@ -41,7 +41,7 @@
                   </div>
                 </div>
           
-                <div class="flex items-center col-span-1 bg-gradient-to-r from-[#3752FD] via-[#6C7FFA] to-[#9BA8F8] text-white p-4 font-semibold rounded-lg text-center">
+                <div id="discover-something" class="flex items-center col-span-1 bg-gradient-to-r from-[#3752FD] via-[#6C7FFA] to-[#9BA8F8] text-white p-4 font-semibold rounded-lg text-center cursor-pointer">
                     <img src="assets/board.png" alt="">
                   <p class="text-lg "> Discover Something New Today!</p>
                 </div>
@@ -148,6 +148,8 @@
             </div>
           </div>                
     </main>
+
+    <script src="js/script.js"></script>
 </body>
 
 </html>
