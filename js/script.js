@@ -13,4 +13,12 @@ document
   document.getElementById('discover-something').addEventListener('click', function(){
     window.location.href = 'main.html';
   })
+
+  const newDate = (new Date()).toString().split(' ')
+  document.getElementById('date').innerHTML = `<h1>${newDate[0]},</h1>`
+  document.getElementById('new-date').innerText = ` ${newDate[1]} ${newDate[2]} ${newDate[3]}`
+  document.getElementById('new-date').style.fontWeight = 'bold'
+  document.getElementById('date').style.textAlign = 'start'
+ 
+ 
   
