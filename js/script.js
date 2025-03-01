@@ -20,5 +20,48 @@ document
   document.getElementById('new-date').style.fontWeight = 'bold'
   document.getElementById('date').style.textAlign = 'start'
  
+//   document.getElementById('btn-completed').addEventListener('click', function(){
+//     alert('Board Updated Successfully');
+//    document.getElementById('btn-completed').disabled = true;
+//    let taskNumber = 6;
+//    let navNumber = 23;
+//    if(taskNumber > 0 && navNumber > 0){
+//     taskNumber --;
+//     navNumber ++;
+//    }
+//    document.getElementById('task-number').innerText = taskNumber;
+//    document.getElementById('nav-number').innerText = navNumber;
+//   })
  
-  
+const newBtn = document.querySelectorAll('.btn-click');
+let taskNumber = 6;
+let navNumber = 23;
+let count = 0;
+let btnCount = newBtn.length;
+for(const btn of newBtn){
+    btn.addEventListener('click', function(){
+        alert('Board Updated Successfully');
+        btn.disabled = true;
+        if(taskNumber > 0 ){
+            taskNumber --;
+            navNumber ++;
+        }
+        document.getElementById('task-number').innerText = taskNumber;
+        document.getElementById('nav-number').innerText = navNumber;
+        count++;
+        if(count === btnCount){
+            alert('Congrates!!! You have Completed all the Current Task');
+        }
+       
+        const taskTitle = btn.closest('.rounded-lg').querySelector('.task-title').innerText;
+        const activityLog = document.getElementById('activity-log');
+        const li = document.createElement('li');
+       li.innerText = `You have completed the task "${taskTitle}" at ${new Date().toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })} .`
+       li.classList.add('p-2', 'rounded-lg', 'shadow-md', 'font-semibold')
+        activityLog.appendChild(li);
+    })
+}
+
+document.getElementById('clear-history-btn').addEventListener('click', function(){
+    document.getElementById('activity-log').innerHTML = '';
+})
